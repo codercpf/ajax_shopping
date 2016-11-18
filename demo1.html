@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ajax在购物车中的应用</title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+</head>
+<body>
+	<div>
+		<button id="btn">发送一个Ajax请求</button>
+		<div id="box"></div>
+	</div>	
+	<script type="text/javascript">
+		//$.get(url, data, function(){}, type);
+		//$.post(url, data, function(){}, type);
+		//$.ajax(url, setting, setting)
+		// 只有第一个参数url是必须的，后面可选
+
+
+	/*
+		//页面加载时生效
+		$.get("demo1.php",{'username':'科学家'},function(data){
+			alert(data);
+		});
+	*/
+	
+		$("#btn").click(function(){
+		/*
+			//get方式
+			$.get('demo1.php', {'username':'科学家','age':30}, function(data){
+				$("#box").html(data);
+			});
+		*/
+		/*
+			//post方式
+			$.post('demo1.php', {'username':'科学家','age':30}, function(data){
+				$("#box").html(data);
+			});
+		*/
+
+			//ajax综合方式
+			$.ajax({
+				'url': 'demo1.php',
+				'data': {'username':'科学家', 'age':30},
+				'type': 'post',             //数据传输方式，默认get      
+				'success': function(data){	//支持的回调函数，有success, error等
+					$("#box").html(data);
+				},
+				'dataType': 'html',   		//返回的数据类型
+			});
+			
+		});		
+
+	</script>
+</body>
+</html>
