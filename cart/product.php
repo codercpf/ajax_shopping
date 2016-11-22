@@ -155,7 +155,6 @@
 		}
 	</script>
 
-	<script type="text/javascript">var process_requrest="正在处理您的请求……"</script>
 	<script type="text/javascript">
 		//收藏本站
 		function AddFavorite(title, url){
